@@ -7,6 +7,14 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+- task: SonarQubeScannerCli@2
+  inputs:
+    connectedServiceName: 'Sonarqube'
+    projectKey: 'AzureDevops'
+    projectName: 'AzureDevops'
+    projectVersion: '1.0'
+    sources: '.'
+
 - task: NuGetToolInstaller@0
 
 - task: NuGetCommand@2
